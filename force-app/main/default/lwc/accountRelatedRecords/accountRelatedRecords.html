@@ -1,0 +1,17 @@
+
+<template>
+    <lightning-card title="Related Child List" icon-name="standard:budget_allocation">
+        <div for:each={tables} for:item="table" class="slds-var-m-around_medium" key={table.id}>
+            <template if:true={table.data}>
+            <br/><p class="slds-text-heading_small">{table.name}</p>
+                <lightning-datatable
+                    key-field="id"
+                    data={table.data}
+                    columns={table.columns}
+                    hide-checkbox-column="true"
+                    show-row-number-column="true">
+                </lightning-datatable>  
+            </template>
+        </div>
+    </lightning-card>
+</template>
